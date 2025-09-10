@@ -23,7 +23,7 @@ resource "aws_lb_listener" "listener" {
 # these 8080 port is configured without Apache, if Apache is configured, then we need to keep port 80 here
 resource "aws_lb_target_group" "tg" {
 name = "tg"
-port = 80
+port = 8080
 protocol = "HTTP"
 vpc_id = var.vpc_id
 }
@@ -35,5 +35,5 @@ resource "aws_lb_target_group_attachment" "tga" {
   count = length(var.instances)
   target_group_arn = aws_lb_target_group.tg.arn
   target_id        = var.instances[count.index]
-  port             = 80
+  port             = 8080
 }
