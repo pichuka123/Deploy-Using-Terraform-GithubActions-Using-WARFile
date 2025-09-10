@@ -20,15 +20,15 @@ sudo yum install git maven -y
 # Install Tomcat (if using WAR deployment)
 
 # Create a tomcat user and directory
-sudo useradd -m -U -d /opt/tomcat -s /bin/false tomcat || true
-sudo cd /opt/
+#sudo useradd -m -U -d /opt/tomcat -s /bin/false tomcat || true
+cd /opt/
 sudo wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.109/bin/apache-tomcat-9.0.109.tar.gz
 sudo tar -xvzf apache-tomcat-9.0.109.tar.gz
-sudo mv apache-tomcat-9.0.109 tomcat
-sudo cd /opt/tomcat/webapps/manager/META-INF
-sudo sed -i 's/"127\\.\\d+\\.\\d+\\.\\d+|::1|0:0:0:0:0:0:0:1"/".*"/g' context.xml
 sudo rm -rf apache-tomcat-9.0.109.tar.gz
-sudo cd /opt/tomcat/conf
+sudo mv apache-tomcat-9.0.109 tomcat
+cd /opt/tomcat/webapps/manager/META-INF
+sudo sed -i 's/"127\\.\\d+\\.\\d+\\.\\d+|::1|0:0:0:0:0:0:0:1"/".*"/g' context.xml
+cd /opt/tomcat/conf
 sudo mv tomcat-users.xml tomcat-users_bkup.xml
 sudo touch tomcat-users.xml
 sudo echo '<?xml version="1.0" encoding="utf-8"?>
@@ -41,8 +41,8 @@ sudo echo '<?xml version="1.0" encoding="utf-8"?>
 
 
 # Fix permissions
-chown -R tomcat:tomcat /opt/tomcat
-chmod +x /opt/tomcat/bin/*.sh
+#sudo chown -R tomcat:tomcat /opt/tomcat
+#sudo chmod +x /opt/tomcat/bin/*.sh
 
 # Get WAR file from S3
 sudo aws s3 cp s3://pichukaartifactbucket/myapp.war /opt/tomcat/webapps/myapp.war
