@@ -10,7 +10,7 @@ sudo yum update -y
 sudo amazon-linux-extras enable corretto 17
 sudo yum install java-17-amazon-corretto -y
 sudo yum install git maven -y 
-#yum install -y httpd mod_proxy mod_proxy_ajp
+##yum install -y httpd mod_proxy mod_proxy_ajp
 
 # Enable and start Apache HTTPD
 #systemctl enable httpd
@@ -37,7 +37,7 @@ sudo echo '<?xml version="1.0" encoding="utf-8"?>
 <user username="tomcat" password="tomcat" roles="manager-gui, manager-script, manager-status"/>
 </tomcat-users>' > tomcat-users.xml
 # below is if Jenkins is also in the same server.
-#sudo sed -i 's/Connector port="8080"/Connector port="8081"/g' server.xml
+##sudo sed -i 's/Connector port="8080"/Connector port="8081"/g' server.xml
 
 
 # Fix permissions
