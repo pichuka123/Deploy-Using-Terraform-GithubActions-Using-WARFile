@@ -10,7 +10,7 @@ sudo yum update -y
 sudo amazon-linux-extras enable corretto 17
 sudo yum install java-17-amazon-corretto -y
 sudo yum install git maven -y 
-#yum install -y httpd mod_proxy mod_proxy_ajp
+##yum install -y httpd mod_proxy mod_proxy_ajp
 
 # Enable and start Apache HTTPD
 #systemctl enable httpd
