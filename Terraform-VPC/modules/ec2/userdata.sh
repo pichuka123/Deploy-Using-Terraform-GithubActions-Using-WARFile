@@ -37,7 +37,7 @@ sudo echo '<?xml version="1.0" encoding="utf-8"?>
 <user username="tomcat" password="tomcat" roles="manager-gui, manager-script, manager-status"/>
 </tomcat-users>' > tomcat-users.xml
 # below is if Jenkins is also in the same server.
-#sudo sed -i 's/Connector port="8080"/Connector port="8081"/g' server.xml
+##sudo sed -i 's/Connector port="8080"/Connector port="8081"/g' server.xml
 
 
 # Fix permissions
