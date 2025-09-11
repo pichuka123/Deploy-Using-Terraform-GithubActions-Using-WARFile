@@ -17,4 +17,3 @@ variable "instances" {
 description = "Instance ID for Target Group Attachment"
 type = list(string)
 }
-
