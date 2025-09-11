@@ -15,7 +15,7 @@ resource "aws_iam_role" "ec2_role" {
   })
 }
 
-# IAM Policy for S3 Read
+## IAM Policy for S3 Read
 resource "aws_iam_policy" "s3_read_policy" {
   name        = "ec2-s3-read-policy"
   description = "Allow EC2 to read from S3"
